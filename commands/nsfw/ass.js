@@ -4,9 +4,9 @@ const Discord = require('discord.js')
 const rp = require('request-promise-native');
 
 module.exports = {
-    name: "boobs",
+    name: "ass",
     category: "nsfw",
-  description: "Sends boobs",
+  description: "Sends ass",
   run: async (client, message, args, level) => {
   //command
 
@@ -22,20 +22,20 @@ module.exports = {
       
   }
 
-  return rp.get('http://api.oboobs.ru/boobs/0/1/random').then(JSON.parse).then(function(res)  {
+  return rp.get('http://api.obutts.ru/butts/0/1/random').then(JSON.parse).then(function(res)  {
     return rp.get({
-        url:'http://media.oboobs.ru/' + res[0].preview,
+        url:'http://media.obutts.ru/' + res[0].preview,
         encoding: null
     });
 }).then(function(res)   {
 
-const boobs = new Discord.MessageEmbed()
-      .setTitle("Boobs")
+const ass = new Discord.MessageEmbed()
+      .setTitle("Ass")
       .setColor(`#FF0000`)
       .setImage("attachment://file.png").attachFiles([{ attachment: res, name: "file.png" }])
 
 
-    message.channel.send(boobs);
+    message.channel.send(ass);
 });
   }
   };
